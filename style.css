@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.main {
+    display: flexbox;
+    margin: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+body{
+    min-height: 100%;
+    background-image: linear-gradient( #04459f, #01004c, #000000 );
+    margin-bottom: 100px;  
+
+}
+
+
+.header {
+    background-color: black;
+    text-align: center;
+    justify-content: center;
+    padding: 30px 0px;
+    display: flex;
+    margin-bottom: 50px;
+    border-bottom: 1px white solid;
+    box-shadow: 1.5px 1.5px 1.5px white;
+}
+
+h1{
+    flex-shrink: 1;
+    color: white;
+    font-size: 55px;
+    text-transform:uppercase;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.547);    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2, h3 {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.gameInfo{
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.results {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.game-status-container{
+    display: flex;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+
+.selections{
+    display: flex; 
+    align-items: center;
+    gap: 10px; 
+    width: 500px;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.selectionDisplay {
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-content: center;
+}
+
+.gameHUD-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: 2px white solid;
+    border-radius: 5%;
+    background: linear-gradient(90deg, #04459f, #01004c);
+    box-shadow: 2px 2px 2px black;  
+}
+
+
+.scoreBoard {
+    width: 200px;
+    padding: 10px;
+    border-bottom: 2px white solid;
+    color: white;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.btn{
+    padding: 10px;
+    height: 150px; 
+    width: 150px; 
+    border-radius: 50%;
+    background: #0000005e;
+    border: 1px solid white;
+    opacity: .7;
+    box-shadow: inset;
+}
+
+.btn:hover{
+    background: linear-gradient(90deg, #04459f, #01004c);
+    opacity: 1;
+    transition: 0.5s; 
+    scale: 1.10;
+    transform: rotate(90deg);
+    cursor: pointer;
+    border: 3px solid white;
+}
+
+.btn:active{
+    background: linear-gradient(90deg, #0357cb, #020075);
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 25px; 
+    padding:10px; 
+
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+#pRock {
+    background-image: url(./Assets/rock-wht.png);
+    background-size: contain;
+    rotate: 90deg;
+}
+
+#pPaper {
+    background-image: url(./Assets/paper-wht.png);
+    background-size: contain;
+    rotate: 90deg;
+}
+
+#pScissors {
+    background-image: url(./Assets/scissors-wht.png);
+    background-size: contain;
+    rotate: 90deg;
+}
+
+.computerSelection{
+    transform: scaleX(-1);
+}
+
+
+#cRock {
+    background-image: url(./Assets/rock-wht.png);
+    background-size: contain;
+    rotate: -90deg;
+}
+
+#cPaper {
+    background-image: url(./Assets/paper-wht.png);
+    background-size: contain;
+    rotate: -90deg;
+}
+
+#cScissors {
+    background-image: url(./Assets/scissors-wht.png);
+    background-size: contain;
+    rotate: -90deg;
+}
+
+.footer {
+    position: absolute;
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+    width: 100%;
+    padding: 8px; 
+    bottom: 0;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+
+.gameEndPopUp {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 20%; 
+    left: 35%; 
+    background: linear-gradient(90deg, #04459f, #01004c);  
+    height: 300px; 
+    width: 500px;
+    display: flexbox;
+    text-align: center;
+    align-content: center;
+    border: 2px white solid;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px black;
+
+}
+
+.gameEndMsg{
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 60px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: #000000;
+    text-decoration: underline;
+    text-decoration-thickness: from-font ;
+}
+
+.resetBtn{
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    margin-top: 10px;
+    height: 50px; 
+    width: 100px; 
+    background: #0000005e;
+    border: 1px solid white;
+    border-radius: 5%;
+    opacity: .7;
+    box-shadow: inset;
+}
+
+.resetBtn:hover{
+    background: linear-gradient(90deg, #04459f, #01004c);
+    opacity: 1;
+    scale: 1.10;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.resetBtn:active{
+    background: linear-gradient(90deg, #0357cb, #020075);
+}
+
+.gameEndOverlay{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.777);
+    top: 0;
+    height: 100%; 
+    width: 100%;
+    display: flexbox;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
