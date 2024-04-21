@@ -3,100 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <script>
-      function getComputerChoice() {
-        computerChoice = Math.floor(Math.random() * 3) + 1;
-        if (computerChoice === 1) {
-          return "rock";
-        } else if (computerChoice === 2) {
-          return "paper";
-        } else {
-          return "scissors";
-        }
-      }
-
-      function playGame() {
-        let playerScore = 0;
-        let computerScore = 0;
-
-        function playRound(playerSelection, computerSelection) {
-          if (playerSelection === "rock" && computerSelection == "scissors") {
-            playerScore++;
-            return "You WIN! Rock beats Scissors.";
-          } else if (
-            playerSelection === "rock" &&
-            computerSelection == "paper"
-          ) {
-            computerScore++;
-            return "You LOSE! Paper beats Rock.";
-          } else if (
-            playerSelection === "paper" &&
-            computerSelection == "rock"
-          ) {
-            playerScore++;
-            return "You WIN! Paper beats Rock.";
-          } else if (
-            playerSelection === "paper" &&
-            computerSelection === "scissors"
-          ) {
-            computerScore++;
-            return "You LOSE! Scissors beats Paper.";
-          } else if (
-            playerSelection === "scissors" &&
-            computerSelection === "paper"
-          ) {
-            playerScore++;
-            return "You WIN! Scissors beats Paper.";
-          } else if (
-            playerSelection === "scissors" &&
-            computerSelection === "rock"
-          ) {
-            computerScore++;
-            return "You LOSE! Rock beats Scissors.";
-          } else {
-            return "It's a Draw!";
-          }
-        }
-        let i = 1;
-
-        for (let i = 1; i <= 5; ) {
-          const round = i;
-          let playerSelection = prompt(
-            "Rock, Paper or Scissors?".toLowerCase()
-          );
-          if (
-            playerSelection === "rock" ||
-            playerSelection === "paper" ||
-            playerSelection === "scissors"
-          ) {
-            const computerSelection = getComputerChoice();
-            i++;
-            console.log(`Round: ${round}`);
-            console.log(playRound(playerSelection, computerSelection));
-            console.log(
-              `You selected: ${playerSelection}, Your Opponent selected: ${computerSelection}`
-            );
-            console.log(
-              `Player's Score: ${playerScore} Opponent's Score: ${computerScore}`
-            );
-            console.log("______________________________");
-          } else {
-            alert("Invalid Option: Please select Rock, Paper, or Scissors");
-          }
-        }
-        if (playerScore > computerScore) {
-          console.log("You WIN!! ^_^");
-        } else if (playerScore < computerScore) {
-          console.log("You Lose.. -_-");
-        } else {
-          console.log("It's a Draw!");
-        }
-      }
-
-      playGame();
-    </script>
+    <header class="header">
+      <h1 class="headerText">Rock Paper Scissors</h1>
+    </header>
+    <div class="flexbox-container main">
+      <div class="playarea">
+        <div class="info-1">
+          <h2 class="results">Select Rock, Paper or Scissors</h2>
+        </div>
+        <div class="info-2">
+          <h3 class="gameInfo">The First to Win 3 Rounds Will be Victorous</h3>
+        </div>
+        <div class="game-status-container">
+          <div class="selections">
+            <div class="gameHUD-box">
+              <div class="scoreBoard">
+                <p>Player Score:</p>
+                <span class="playerScore">0</span>
+              </div>
+              <div class="playerSelection selectionDisplay"></div>
+            </div>
+            <div class="gameHUD-box">
+              <div class="scoreBoard">
+                <p>Computer Score:</p>
+                <span class="cpuScore">0</span>
+              </div>
+              <div class="computerSelection selectionDisplay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="rock-btn btn" data-name="rock">
+          <img
+            class="signs"
+            id="rock"
+            data-name="rock"
+            src="./Assets/rock-wht.png"
+          />
+        </button>
+        <button class="paper-btn btn" data-name="paper">
+          <img
+            class="signs"
+            id="paper"
+            data-name="paper"
+            src="./Assets/paper-wht.png"
+          />
+        </button>
+        <button class="scissors-btn btn" data-name="scissors">
+          <img
+            class="signs"
+            id="scissors"
+            data-name="scissors"
+            src="./Assets/scissors-wht.png"
+          />
+        </button>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Created by SByfield via The Odin Project</p>
+    </footer>
+    <div class="gameEndOverlay">
+      <div id="gameEndPopUp" class="gameEndPopUp">
+        <p class="gameEndMsg">Game Over</p>
+        <button class="resetBtn">Restart</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
